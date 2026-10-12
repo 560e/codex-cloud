@@ -1,0 +1,13 @@
+{
+    admin off
+    auto_https disable_redirects
+}
+
+{$WORKBENCH_ADDRESS} {
+    tls "{$WORKBENCH_TLS_CERT}" "{$WORKBENCH_TLS_KEY}"
+    encode zstd gzip
+    request_body {
+        max_size 22MB
+    }
+    reverse_proxy {$WORKBENCH_BACKEND}
+}

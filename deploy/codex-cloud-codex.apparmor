@@ -1,0 +1,8 @@
+# Ubuntu 24.04: permit user namespaces for this exact Codex native binary.
+# Adjust the attachment path if the Node/Codex installation path changes.
+abi <abi/4.0>,
+include <tunables/global>
+
+profile codex-cloud-codex-native "/usr/local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex" flags=(unconfined) {
+    userns,
+}

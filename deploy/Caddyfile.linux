@@ -1,0 +1,9 @@
+# Replace this domain with PUBLIC_ORIGIN's hostname. DNS must point here.
+# Public ACME issuance needs reachable ports 80 and 443.
+codex.example.com {
+    encode zstd gzip
+    request_body {
+        max_size 22MB
+    }
+    reverse_proxy 127.0.0.1:18474
+}

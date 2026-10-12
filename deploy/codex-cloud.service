@@ -1,0 +1,27 @@
+[Unit]
+Description=Codex Cloud Codex workbench
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=codexcloud
+Group=codexcloud
+WorkingDirectory=/opt/codex-cloud
+Environment=NODE_ENV=production
+Environment=HOME=/var/lib/codex-cloud
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+ExecStart=/usr/bin/node /opt/codex-cloud/dist/server/index.js
+Restart=on-failure
+RestartSec=5
+UMask=0077
+KillMode=control-group
+TimeoutStopSec=20
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=codex-cloud
+
+[Install]
+WantedBy=multi-user.target

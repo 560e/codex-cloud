@@ -1,0 +1,226 @@
+.continuity-page {
+  flex: 1;
+  min-width: 0;
+  overflow: auto;
+  padding: 28px clamp(18px, 3vw, 48px) 48px;
+  background: var(--bg);
+}
+.continuity-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.continuity-heading > div {
+  min-width: 0;
+  flex: 1;
+}
+.continuity-heading h1 {
+  margin: 5px 0 8px;
+  font-size: 27px;
+}
+.continuity-heading p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+.continuity-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 380px) minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+}
+.collaboration-layout {
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+}
+.continuity-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+.continuity-card h2 {
+  margin: 0 0 16px;
+}
+.continuity-card h3 {
+  margin: 20px 0 8px;
+}
+.continuity-card .field {
+  margin: 14px 0;
+}
+.continuity-card .field select,
+.continuity-search {
+  width: 100%;
+  min-width: 0;
+  padding: 9px 10px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: none;
+}
+.continuity-card .field textarea {
+  min-height: 78px;
+  resize: vertical;
+}
+.continuity-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.continuity-section-head h2 {
+  margin: 0;
+}
+.continuity-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.continuity-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+.continuity-item {
+  min-width: 0;
+  padding: 14px;
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-soft);
+}
+.continuity-item p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.55;
+  margin: 10px 0;
+}
+.continuity-item-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.continuity-stack {
+  min-width: 0;
+  display: grid;
+  gap: 18px;
+}
+.collaboration-groups {
+  display: grid;
+  gap: 8px;
+}
+.collaboration-group {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface-soft);
+}
+.collaboration-group.active {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+.collaboration-group small {
+  color: var(--muted);
+}
+.collaboration-member {
+  padding: 14px;
+  margin: 12px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.collaboration-member .field:last-child {
+  margin-bottom: 0;
+}
+.collaboration-count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.collaboration-count input {
+  width: 70px;
+  padding: 7px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+}
+.collaboration-run {
+  margin-top: 16px;
+}
+.feature-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  cursor: pointer;
+}
+.feature-toggle span {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+.feature-toggle small {
+  color: var(--muted);
+  line-height: 1.4;
+}
+.feature-toggle input {
+  flex: none;
+  width: 19px;
+  height: 19px;
+  accent-color: var(--primary);
+}
+@media (max-width: 900px) {
+  .continuity-layout,
+  .collaboration-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .collaboration-groups {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .collaboration-groups .continuity-section-head {
+    width: 100%;
+  }
+  .collaboration-group {
+    width: min(220px, 100%);
+  }
+}
+@media (max-width: 600px) {
+  .continuity-page {
+    padding: 18px 14px 36px;
+  }
+  .continuity-heading {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .continuity-heading > div {
+    flex-basis: calc(100% - 52px);
+  }
+  .continuity-heading h1 {
+    font-size: 23px;
+  }
+  .continuity-heading > .secondary {
+    margin-left: auto;
+  }
+  .continuity-card {
+    padding: 15px;
+  }
+  .collaboration-group {
+    width: 100%;
+  }
+  .continuity-actions > button {
+    min-height: 38px;
+  }
+}
